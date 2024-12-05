@@ -10,11 +10,16 @@
 <body>
 <script type="module">
     import { getData, postData, putData, patchData, deleteData } from './main.js'
-    getData()
-    postData()
-    putData()
-    patchData()
-    deleteData()
+    getData('/posts')
+    getData('/posts/1')
+    postData('/posts', { title: 'foo', body: 'bar', userId: 1 })
+        .then(data => console.log(data))
+        .catch(error => console.error('Unhandled error:', error));
+    putData(1, { title: 'Updated Title', body: 'Updated Body', userId: 1 });
+    patchData(1, { title: 'Updated Title', body: 'Updated Body', userId: 1 });
+    deleteData(1)
+        .then(result => console.log('Result:', result))
+        .catch(error => console.error('Unhandled error:', error));
 </script>
 </body>
 </html>

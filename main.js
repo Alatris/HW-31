@@ -47,8 +47,6 @@ async function getData(segment) {
     }
 }
 
-getData('/posts')
-getData('/posts/1')
 
 /*
  *
@@ -105,9 +103,7 @@ async function postData(segment, data) {
 }
 
 
-postData('/posts', { title: 'foo', body: 'bar', userId: 1 })
-    .then(data => console.log(data))
-    .catch(error => console.error('Unhandled error:', error));
+
 /*
  *
  * #3
@@ -159,7 +155,7 @@ async function putData(id, data) {
     }
 }
 
-putData(1, { title: 'Updated Title', body: 'Updated Body', userId: 1 });
+
 
 
 /*
@@ -221,7 +217,7 @@ async function patchData(id, data) {
     }
 }
 
-patchData(1, { title: 'Updated Title', body: 'Updated Body', userId: 1 });
+
 
 
 
@@ -275,9 +271,7 @@ async function deleteData(id) {
 }
 
 
-deleteData(1)
-    .then(result => console.log('Result:', result))
-    .catch(error => console.error('Unhandled error:', error));
+
 
 
 
